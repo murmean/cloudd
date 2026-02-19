@@ -16,9 +16,11 @@ const server = http.createServer(app);
 // create socket.io server
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: "*", // change later to frontend URL
+    methods: ["GET", "POST"],
   },
 });
+
 
 // register chat socket handlers
 chatSocket(io);
